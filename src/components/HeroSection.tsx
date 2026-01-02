@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Hammer, Shield, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-tools.jpg";
 
 const HeroSection = () => {
   return (
@@ -81,26 +82,27 @@ const HeroSection = () => {
 
           {/* Hero Image */}
           <div className="relative hidden lg:block animate-fade-in">
-            <div className="relative z-10">
-              <img
-                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=600&fit=crop"
-                alt="Power Tools"
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=200&h=200&fit=crop"
-                alt="Hardware Tools"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -top-6 -right-6 w-32 h-32 rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=150&h=150&fit=crop"
-                alt="Construction"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative">
+              {/* Main hero image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/20">
+                <img
+                  src={heroImage}
+                  alt="Professional hardware tools - drills, hammers, and wrenches"
+                  className="w-full h-auto object-cover"
+                />
+                {/* Gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-transparent to-transparent" />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/20 rounded-xl blur-xl" />
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-xl" />
+              
+              {/* Stats badge */}
+              <div className="absolute -bottom-6 -right-6 bg-card/90 backdrop-blur-sm p-4 rounded-xl shadow-xl border border-border">
+                <p className="text-2xl font-bold text-primary">500+</p>
+                <p className="text-xs text-muted-foreground">Products Available</p>
+              </div>
             </div>
           </div>
         </div>
